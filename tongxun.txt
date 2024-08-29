@@ -1,0 +1,9 @@
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/pi/intelligent_vehicle/DYF/last_version/intelligent_car.py", line 394, in modelwait
+    if input() == 'o':
+EOFError: EOF when reading a line

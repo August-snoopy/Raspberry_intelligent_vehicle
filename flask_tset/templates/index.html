@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>control car</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+
+  </head>
+  <body>
+    <h1>Hello, master</h1>
+    <button id = 'forword'>forword</button>
+    <button id = 'backword'>backword</button>
+    <button id = 'left'>left</button>
+    <button id = 'right'>right</button>
+    <script>
+    $(document).ready(
+        function() {
+            var socket = io.connect('http://' + document.domain + ':' + location.port);
+            $('#forword').click(function() {
+                socket.emit('move', {direction: 'forword'});
+            });
+            $('#backword').click(function() {
+                socket.emit('move', {direction: 'backword'});
+            });
+            $('#left').click(function() {
+                socket.emit('move', {direction: 'left'});
+            });
+            $('#right').click(function() {
+                socket.emit('move', {direction: 'right'});
+            });
+        })
+    </script>
+  </body>
